@@ -45,3 +45,29 @@ $("#time4").text(fourHr);
 var fiveHr = beforeTime.add(1, "h");
 fiveHr = fiveHr.format('hh:mm A');
 $("#time5").text(fiveHr);
+
+function timeCheck() {
+    
+    nineHr = moment().startOf('day').add(9, "hours");
+
+    if (nowTime.isAfter(nineHr)) {
+        $("#input9").addClass("past");
+    } else if (nowTime.isBefore(nineHr)) {
+        $("#input9").addClass("future");
+    } else if (nowTime.isSame(nineHr)) {
+        $("#input9").addClass("present");
+    };
+// ----
+    fiveHr = moment().startOf('day').add(17, "hours");
+
+    if (nowTime.isAfter(fiveHr)) {
+        $("#input5").addClass("past");
+    } else if (nowTime.isBefore(fiveHr)) {
+        $("#input5").addClass("future");
+    } else if (nowTime.isSame(fiveHr)) {
+        $("#input5").addClass("present");
+    };
+// ----
+}
+
+timeCheck()
