@@ -50,6 +50,7 @@ $("#time5").text(fiveHr);
 function timeCheck() {
     
     nineHr = moment().startOf("day").add(9, "hours");
+    nowTime = nowTime.startOf("hour");
 
     if (nowTime.isAfter(nineHr)) {
         $("#input9").addClass("past");
@@ -61,6 +62,7 @@ function timeCheck() {
 // ----
 
     tenHr = moment().startOf("day").add(10, "hours")
+    nowTime = nowTime.startOf("hour");
 
     if (nowTime.isAfter(tenHr)) {
         $("#input10").addClass("past");
@@ -72,6 +74,7 @@ function timeCheck() {
 // ----  
 
     elevenHr = moment().startOf("day").add(11, "hours")
+    nowTime = nowTime.startOf("hour");
 
     if (nowTime.isAfter(elevenHr)) {
         $("#input11").addClass("past");
@@ -83,6 +86,7 @@ function timeCheck() {
 // ----
 
     twelveHr = moment().startOf("day").add(12, "hours")
+    nowTime = nowTime.startOf("hour");
 
     if (nowTime.isAfter(twelveHr)) {
         $("#input12").addClass("past");
@@ -94,6 +98,7 @@ function timeCheck() {
 // ----
 
     oneHr = moment().startOf("day").add(13, "hours")
+    nowTime = nowTime.startOf("hour");
 
     if (nowTime.isAfter(oneHr)) {
         $("#input1").addClass("past");
@@ -105,6 +110,7 @@ function timeCheck() {
 // ----
 
     twoHr = moment().startOf("day").add(14, "hours")
+    nowTime = nowTime.startOf("hour");
 
     if (nowTime.isAfter(twoHr)) {
         $("#input2").addClass("past");
@@ -116,6 +122,7 @@ function timeCheck() {
 // ----
 
     threeHr = moment().startOf("day").add(15, "hours")
+    nowTime = nowTime.startOf("hour");
 
     if (nowTime.isAfter(threeHr)) {
         $("#input3").addClass("past");
@@ -127,6 +134,7 @@ function timeCheck() {
 // ----
 
     fourHr = moment().startOf("day").add(16, "hours")
+    nowTime = nowTime.startOf("hour");
 
     if (nowTime.isAfter(fourHr)) {
         $("#input4").addClass("past");
@@ -138,6 +146,7 @@ function timeCheck() {
 // ----
 
     fiveHr = moment().startOf("day").add(17, "hours");
+    nowTime = nowTime.startOf("hour");
 
     if (nowTime.isAfter(fiveHr)) {
         $("#input5").addClass("past");
@@ -151,23 +160,25 @@ function timeCheck() {
 timeCheck();
 
 
-// loop to get input data from local storage
+// // loop to get input data from local storage
 var num = [9, 10, 11, 12, 1, 2, 3, 4, 5];
 
 for (var i = 0; i < num.length; i++) {
-    var inputValue = localStorage.getItem(num[i]);
+    var inputHour = localStorage.getItem(num[i]);
     
-    $("#input" + num[i]).val(inputValue);
+    $("#input" + num[i]).val(inputHour);
 }
 
 // event to save input data to local storage
 $(".saveBtn").click(function () {
     event.preventDefault();
+    
     var inputData = $(this).siblings(".form-control").val();
-    console.log("This worked");
-    var listHr = $(this).parent().data("hour");
+    var listHour = $(this).parent().data("hour");
 
-    localStorage.setItem(listHr, inputData);
+    localStorage.setItem(listHour, inputData);
 });
+
+
 
 
