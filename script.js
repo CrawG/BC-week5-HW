@@ -46,7 +46,7 @@ var fiveHr = beforeTime.add(1, "h");
 fiveHr = fiveHr.format('hh:mm A');
 $("#time5").text(fiveHr);
 
-// function to change class and based on current time
+// function to change class based on current time
 function timeCheck() {
     
     nineHr = moment().startOf("day").add(9, "hours");
@@ -148,6 +148,26 @@ function timeCheck() {
     };
 }
 
+timeCheck();
 
 
-timeCheck()
+// loop to get input data from local storage
+var num = [9, 10, 11, 12, 1, 2, 3, 4, 5];
+
+for (var i = 0; i < num.length; i++) {
+    var inputValue = localStorage.getItem(num[i]);
+    
+    $("#input" + num[i]).val(inputValue);
+}
+
+// event to save input data to local storage
+$(".saveBtn").click(function () {
+    event.preventDefault();
+    var inputData = $(this).siblings(".form-control").val();
+    console.log("This worked");
+    var listHr = $(this).parent().data("hour");
+
+    localStorage.setItem(listHr, inputData);
+});
+
+
