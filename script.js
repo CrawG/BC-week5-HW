@@ -4,10 +4,10 @@ moment(Date);
 $("#currentDay").text(moment().format('dddd MMMM Do YYYY, h:mm a'));
 
 
-// setting times for comparison based on moment time
+// set times for comparison based on moment time
 var nowTime = moment();
 nowtTime = nowTime.startOf("hour");
-var beforeTime = moment().startOf('day').add(9, "hours");
+var beforeTime = moment().startOf("day").add(9, "hours");
 
 // Hour blocks
 var nineHr = beforeTime.add(0, "h");
@@ -46,9 +46,10 @@ var fiveHr = beforeTime.add(1, "h");
 fiveHr = fiveHr.format('hh:mm A');
 $("#time5").text(fiveHr);
 
+// function to change class and based on current time
 function timeCheck() {
     
-    nineHr = moment().startOf('day').add(9, "hours");
+    nineHr = moment().startOf("day").add(9, "hours");
 
     if (nowTime.isAfter(nineHr)) {
         $("#input9").addClass("past");
@@ -58,7 +59,85 @@ function timeCheck() {
         $("#input9").addClass("present");
     };
 // ----
-    fiveHr = moment().startOf('day').add(17, "hours");
+
+    tenHr = moment().startOf("day").add(10, "hours")
+
+    if (nowTime.isAfter(tenHr)) {
+        $("#input10").addClass("past");
+    } else if (nowTime.isBefore(tenHr)) {
+        $("#input10").addClass("future");
+    } else if (nowTime.isSame(tenHr)) {
+        $("#input10").addclass("present");
+    }
+// ----  
+
+    elevenHr = moment().startOf("day").add(11, "hours")
+
+    if (nowTime.isAfter(elevenHr)) {
+        $("#input11").addClass("past");
+    } else if (nowTime.isBefore(elevenHr)) {
+        $("#input11").addClass("future");
+    } else if (nowTime.isSame(elevenHr)) {
+        $("#input11").addClass("present");
+    }
+// ----
+
+    twelveHr = moment().startOf("day").add(12, "hours")
+
+    if (nowTime.isAfter(twelveHr)) {
+        $("#input12").addClass("past");
+    } else if (nowTime.isBefore(twelveHr)) {
+        $("#input12").addClass("future");
+    } else if (nowTime.isSame(twelveHr)) {
+        $("#input12").addClass("present");
+    }
+// ----
+
+    oneHr = moment().startOf("day").add(13, "hours")
+
+    if (nowTime.isAfter(oneHr)) {
+        $("#input1").addClass("past");
+    } else if (nowTime.isBefore(oneHr)) {
+        $("#input1").addClass("future");
+    } else if (nowTime.isSame(oneHr)) {
+        $("#input1").addClass("present")
+    }
+// ----
+
+    twoHr = moment().startOf("day").add(14, "hours")
+
+    if (nowTime.isAfter(twoHr)) {
+        $("#input2").addClass("past");
+    } else if (nowTime.isBefore(twoHr)) {
+        $("#input2").addClass("future");
+    } else if (nowTime.isSame(twoHr)) {
+        $("#input2").addClass("present")
+    }
+// ----
+
+    threeHr = moment().startOf("day").add(15, "hours")
+
+    if (nowTime.isAfter(threeHr)) {
+        $("#input3").addClass("past");
+    } else if (nowTime.isBefore(threeHr)) {
+        $("#input3").addClass("future");
+    } else if (nowTime.isSame(threeHr)) {
+        $("#input3").addClass("present")
+    }
+// ----
+
+    fourHr = moment().startOf("day").add(16, "hours")
+
+    if (nowTime.isAfter(fourHr)) {
+        $("#input4").addClass("past");
+    } else if (nowTime.isBefore(fourHr)) {
+        $("#input4").addClass("future");
+    } else if (nowTime.isSame(fourHr)) {
+        $("#input4").addClass("present")
+    }
+// ----
+
+    fiveHr = moment().startOf("day").add(17, "hours");
 
     if (nowTime.isAfter(fiveHr)) {
         $("#input5").addClass("past");
@@ -67,7 +146,8 @@ function timeCheck() {
     } else if (nowTime.isSame(fiveHr)) {
         $("#input5").addClass("present");
     };
-// ----
 }
+
+
 
 timeCheck()
