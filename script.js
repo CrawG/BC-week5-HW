@@ -159,7 +159,6 @@ function timeCheck() {
 
 timeCheck();
 
-
 // // loop to get input data from local storage
 var num = [9, 10, 11, 12, 1, 2, 3, 4, 5];
 
