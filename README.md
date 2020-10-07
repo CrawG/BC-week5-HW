@@ -16,3 +16,5 @@ Link to deployed app: https://crawg.github.io/BC-week5-HW/
  - THEN the text for that event is saved in local storage
  - WHEN I refresh the page
  - THEN the saved events persist
+
+ ![Screenshot 1] (https://github.com/CrawG/BC-week5-HW/blob/main/images/Screen%20Shot%202020-10-07%20at%2011.17.57%20AM.png)
